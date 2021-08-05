@@ -16,17 +16,15 @@ exports.template = function(body) {
     var content = alerts.map(
         alert => {
         return [`> # ${alert.status === 'firing' ? `告警通知`:`恢复通知`}`,`###### 告警类型:<font color="warning">${alert.labels.alertname}</font>`]
-        .concat(`###### <font color="warning">告警级别:${alert.labels.severity}</font>`)
-        .concat(`###### 告警容器:<font color="warning">${alert.labels.container}</font>`)
-        .concat(`###### 实例信息:<font color="warning">${alert.labels.instance}</font>`)
-		.concat(`###### 节点信息:<font color="warning">${alert.labels.node}</font>`)
-        .concat(`###### Pod信息:<font color="comment">${alert.labels.pod}</font>`)
-        .concat(`###### 命名空间:<font color="comment">${alert.labels.namespace}</font>`)
+        .concat(`###### 告警级别:<font color="warning">${alert.labels.severity}</font>`)
+        .concat(`###### 告警容器:<font color="warning">${alert.labels.name}</font>`)
+        .concat(`###### 容器镜像:<font color="warning">${alert.labels.image}</font>`)
+        .concat(`###### 告警实例:<font color="comment">${alert.labels.instance}</font>`)
         .concat(`###### 故障时间:<font color="warning">${formatTimeStamp((Date.parse(alert.startsAt)+28800000))}</font>`)
         .concat(`###### 恢复时间:<font color="warning">${formatTimeStamp((Date.parse(alert.endsAt)+28800000))}</font>`)
+        .concat(`###### 告警来源:<font color="comment">${alert.labels.monitor}</font>`)
         .concat(`###### 告警原因:<font color="warning">${alert.annotations.summary}</font>`)
         .concat(`###### 告警描述:<font color="warning">${alert.annotations.description}</font>`)
-        .concat(`###### 告警说明:<font color="warning">${alert.annotations.runbook_ur}</font>`)
         .join("\n")
         }
     ).concat(`<font color="comment">Status:</font><font color="${body.status === 'firing' ? 'warning' : 'info'}">${body.status}</font>`).join("\n\n");
