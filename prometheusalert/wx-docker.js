@@ -24,7 +24,7 @@ exports.template = function(body) {
         .concat(`###### 恢复时间:<font color="info">${formatTimeStamp((Date.parse(alert.endsAt)))}</font>`)
         .concat(`###### 告警来源:<font color="comment">${alert.labels.monitor}</font>`)
         .concat(`###### 告警原因:<font color="warning">${alert.annotations.summary}</font>`)
-        .concat(`###### 告警描述:<font color="warning">${alert.annotations.description}</font>`)
+        .concat(`###### 告警描述:${alert.annotations.description}`)
         .join("\n")
         }
     ).concat(`<font color="comment">Status:</font><font color="${body.status === 'firing' ? 'warning' : 'info'}">${body.status}</font>`).join("\n\n");
