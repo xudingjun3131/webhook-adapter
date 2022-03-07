@@ -47,6 +47,6 @@ receivers:
   - url: http://192.168.0.45:8080/adapter/nginx
     send_resolved: true
 ```
-## 最后grafana效果如下：<br/>
+## 最后企业微信机器人告警效果如下：<br/>
 ![](https://s3.bmp.ovh/imgs/2022/03/7593a264a7c11d6e.png)
 ![](https://s3.bmp.ovh/imgs/2022/03/bef536d331e9e04e.png)
