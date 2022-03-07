@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guyongquan/webhook-adapter.git"
+    "url": "git+https://github.com/xudingjun3131/webhook-adapter.git"
   },
   "keywords": [
     "webhook"
   ],
-  "author": "guyongquan",
+  "author": "xudingjun3131",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/guyongquan/webhook-adapter/issues"
+    "url": "https://github.com/xudingjun3131/webhook-adapter/issues"
   },
-  "homepage": "https://github.com/guyongquan/webhook-adapter#readme"
+  "homepage": "https://github.com/xudingjun3131/webhook-adapter#readme"
 }
