@@ -9,7 +9,7 @@ docker run --name webhook-adapter -p 8080:80 -d guyongquan/webhook-adapter \
 --adapter=/app/prometheusalert/wx.js=/wx=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={key} \
 --adapter=/app/prometheusalert/wx_jvm.js=/jvm=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={key} \
 --adapter=/app/prometheusalert/wx_nginx.js=/nginx=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={key} \
---adapter=/app/prometheusalert/dingtalk.js=/dingtalk=https://oapi.dingtalk.com/robot/send?access_token={token}#{secret} \
+--adapter=/app/prometheusalert/dingtalk.js=/dingtalk=https://oapi.dingtalk.com/robot/send?access_token={token}#{secret} 
 ```
 
 ## alertmanager 配置
