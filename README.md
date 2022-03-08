@@ -5,7 +5,7 @@ node index.js --port=8080 --adapter=./prometheusalert/wx.js=/wx=https://qyapi.we
 
 ## docker 启动
 ```bash
-docker run --name webhook-adapter -p 8080:80 -d guyongquan/webhook-adapter \
+docker run --name webhook-adapter -p 8080:80 -d xudingjun3131/webhook-adapter:v20220308 \
 --adapter=/app/prometheusalert/wx.js=/wx=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={key} \
 --adapter=/app/prometheusalert/wx_jvm.js=/jvm=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={key} \
 --adapter=/app/prometheusalert/wx_nginx.js=/nginx=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={key} \
