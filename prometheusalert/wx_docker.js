@@ -16,14 +16,13 @@ exports.template = function(body) {
     var alerts = body.alerts;
     var content = alerts.map(
         alert => {
-        return [`> # ${alert.status === 'firing' ? `告警通知`:`恢复通知`}`,`###### 告警类型:<font color="warning">${alert.labels.alertname}</font>`]
+        return [`> # ${alert.status === 'firing' ? `<font color="warning">告警通知</font>`:`<font color="info">恢复通知</font>`}`,`###### 告警类型:<font color="warning">${alert.labels.alertname}</font>`]
         .concat(`###### 告警级别:<font color="warning">${alert.labels.severity}</font>`)
         .concat(`###### 告警容器:<font color="warning">${alert.labels.name}</font>`)
         .concat(`###### 容器镜像:<font color="warning">${alert.labels.image}</font>`)
         .concat(`###### 告警实例:<font color="comment">${alert.labels.instance}</font>`)
         .concat(`###### 故障时间:<font color="warning">${formatTimeStamp((Date.parse(alert.startsAt)))}</font>`)
         .concat(`###### 恢复时间:<font color="info">${formatTimeStamp((Date.parse(alert.endsAt)))}</font>`)
-        .concat(`###### 告警来源:<font color="comment">${alert.labels.monitor}</font>`)
         .concat(`###### 告警原因:<font color="warning">${alert.annotations.summary}</font>`)
         .concat(`###### 告警描述:${alert.annotations.description}`)
         .join("\n")

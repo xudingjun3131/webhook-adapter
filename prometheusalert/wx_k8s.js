@@ -16,7 +16,7 @@ exports.template = function(body) {
     var alerts = body.alerts;
     var content = alerts.map(
         alert => {
-        return [`> # ${alert.status === 'firing' ? `告警通知`:`恢复通知`}`,`###### 告警类型:<font color="warning">${alert.labels.alertname}</font>`]
+        return [`> # ${alert.status === 'firing' ? `<font color="warning">告警通知</font>`:`<font color="info">恢复通知</font>`}`,`###### 告警类型:<font color="warning">${alert.labels.alertname}</font>`]
         .concat(`###### <font color="warning">告警级别:${alert.labels.severity}</font>`)
         .concat(`###### 告警容器:<font color="warning">${alert.labels.container}</font>`)
         .concat(`###### 实例信息:<font color="warning">${alert.labels.instance}</font>`)
